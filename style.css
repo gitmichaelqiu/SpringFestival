@@ -93,6 +93,12 @@ html.lenis {
     z-index: 20;
 }
 
+#envelope-subpage .glass-card:hover {
+    border-color: #FFD700;
+    background: rgba(255, 215, 0, 0.05);
+    box-shadow: 0 30px 60px -15px rgba(255, 215, 0, 0.2);
+}
+
 .card-corner-glow {
     position: absolute;
     top: 0;
