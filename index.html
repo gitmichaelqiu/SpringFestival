@@ -75,8 +75,8 @@
             <div id="stars-container" class="absolute inset-0 pointer-events-none overflow-hidden"></div>
 
             <button id="close-envelope"
-                class="sticky top-8 right-8 self-end w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center transition-colors mr-8 z-50 mt-8">
-                <i data-lucide="x" class="w-6 h-6 text-white"></i>
+                class="absolute top-8 right-8 md:right-12 w-12 h-12 flex items-center justify-center border-2 border-white/20 rounded-full hover:border-festive-red hover:text-white hover:bg-festive-red transition-all duration-300 z-50">
+                <i data-lucide="x" class="w-6 h-6"></i>
             </button>
 
             <div class="max-w-4xl w-full px-6 md:px-12 mt-12 relative z-20">
@@ -95,13 +95,23 @@
                     <p>The red color symbolizes energy, happiness, and good luck. Wrapping money in red envelopes is
                         expected to bestow more happiness and blessings on the receivers.</p>
 
-                    <div class="glass-card p-8 rounded-2xl border border-white/10 bg-black/20 my-12">
-                        <h3 class="font-display text-2xl text-festive-gold mb-4">The Eight Immortals Legend</h3>
-                        <p class="text-base text-gray-300">According to legend, a demon named Sui would touch the heads
-                            of sleeping children on New Year's Eve, causing them illness. Eight fairies transformed
-                            themselves into eight coins to help parents protect their child. They slipped the coins
-                            under the child's pillow on red paper. When Sui appeared, flashes of light from the coins
-                            frightened the demon away.</p>
+                    <div
+                        class="glass-card p-10 flex flex-col justify-center relative overflow-hidden group border-l-4 border-l-festive-gold my-12">
+                        <div class="card-corner-glow"
+                            style="background: radial-gradient(circle at 100% 0%, rgba(255, 215, 0, 0.4) 0%, transparent 70%);">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="font-mono text-xs text-festive-gold mb-4 relative z-10">MYTHOLOGY</h3>
+                            <h3 class="font-display text-2xl text-white mb-4 relative z-10">The Eight Immortals Legend
+                            </h3>
+                            <p class="text-base text-gray-300 relative z-10">According to legend, a demon named Sui
+                                would touch the heads
+                                of sleeping children on New Year's Eve, causing them illness. Eight fairies transformed
+                                themselves into eight coins to help parents protect their child. They slipped the coins
+                                under the child's pillow on red paper. When Sui appeared, flashes of light from the
+                                coins
+                                frightened the demon away.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -113,7 +123,7 @@
             <div id="sparks-container" class="absolute inset-0 pointer-events-none overflow-hidden"></div>
 
             <button id="close-dragon"
-                class="sticky top-8 right-8 self-end w-12 h-12 bg-black/10 hover:bg-black/20 backdrop-blur-md rounded-full flex items-center justify-center transition-colors mr-8 z-50 mt-8">
+                class="absolute top-8 right-8 md:right-12 w-12 h-12 flex items-center justify-center border-2 border-black/20 rounded-full hover:border-festive-red hover:text-white hover:bg-festive-red transition-all duration-300 z-50">
                 <i data-lucide="x" class="w-6 h-6 text-black"></i>
             </button>
 
@@ -177,13 +187,20 @@
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                         <div
-                            class="glass-card p-10 rounded-3xl relative group backdrop-blur-xl border border-white/10 bg-black/40">
+                            class="glass-card p-10 flex flex-col justify-center relative overflow-hidden group border-l-4 border-l-festive-red">
                             <div class="card-corner-glow"></div>
-                            <p class="text-xl md:text-2xl font-light leading-relaxed text-gray-300 relative z-10">
-                                The Spring Festival, or <span class="text-festive-red font-bold">Lunar New Year</span>,
-                                marks the end of winter and the beginning of the spring season. It's the most important
-                                traditional festival in China, deeply rooted in history, honoring deities and ancestors.
-                            </p>
+                            <div class="card-content">
+                                <h3 class="font-mono text-xs text-gray-400 mb-4 relative z-10 tracking-[0.2em]">
+                                    SIGNIFICANCE</h3>
+                                <p class="text-xl md:text-2xl font-light leading-relaxed text-gray-300 relative z-10">
+                                    The Spring Festival, or <span class="text-festive-red font-bold">Lunar New
+                                        Year</span>,
+                                    marks the end of winter and the beginning of the spring season. It's the most
+                                    important
+                                    traditional festival in China, deeply rooted in history, honoring deities and
+                                    ancestors.
+                                </p>
+                            </div>
                         </div>
                         <div class="relative h-[400px] w-full rounded-3xl overflow-hidden group">
                             <img src="resources/red_lanterns.png"
@@ -213,17 +230,26 @@
                         <h2
                             class="font-display text-5xl md:text-8xl font-black text-white tracking-tighter mb-8 leading-none drop-shadow-2xl">
                             THE<br>NIAN<br>MONSTER</h2>
-                        <div class="glass-card p-8 rounded-3xl backdrop-blur-xl border border-white/10 bg-black/40">
-                            <p class="text-lg md:text-xl text-gray-300 font-light leading-relaxed">
-                                Legend speaks of <span class="text-festive-red font-bold">Nian</span>, a terrifying
-                                beast that lived under the sea or in the mountains. Every New Year's Eve, it would
-                                surface to attack villages.
-                            </p>
-                            <p class="text-lg md:text-xl text-gray-300 font-light leading-relaxed mt-4">
-                                The villagers eventually discovered its three weaknesses: loud noises, bright lights,
-                                and the color <span class="text-festive-red font-bold">red</span>. This ancient battle
-                                birthed the firecrackers and red decorations we use today.
-                            </p>
+                        <div
+                            class="glass-card p-10 flex flex-col justify-center relative overflow-hidden group border-l-4 border-l-festive-red w-full">
+                            <div class="card-corner-glow"></div>
+                            <div class="card-content">
+                                <h3 class="font-mono text-xs text-gray-400 mb-4 relative z-10 tracking-[0.2em]">THE
+                                    LEGEND</h3>
+                                <p class="text-lg md:text-xl text-gray-300 font-light leading-relaxed relative z-10">
+                                    Legend speaks of <span class="text-festive-red font-bold">Nian</span>, a terrifying
+                                    beast that lived under the sea or in the mountains. Every New Year's Eve, it would
+                                    surface to attack villages.
+                                </p>
+                                <p
+                                    class="text-lg md:text-xl text-gray-300 font-light leading-relaxed mt-4 relative z-10">
+                                    The villagers eventually discovered its three weaknesses: loud noises, bright
+                                    lights,
+                                    and the color <span class="text-festive-red font-bold">red</span>. This ancient
+                                    battle
+                                    birthed the firecrackers and red decorations we use today.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -308,15 +334,28 @@
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="glass-card aspect-[4/3] rounded-2xl overflow-hidden group">
+                        <div
+                            class="photo-card-vertical group relative w-full aspect-[4/3] overflow-hidden rounded-sm bg-neutral-900 shadow-2xl">
                             <img src="resources/red_lanterns.png"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 alt="Lanterns">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                                <span class="font-mono text-xs tracking-widest text-festive-red mb-2">2026</span>
+                                <h3 class="font-bold text-2xl tracking-tight leading-none text-white">GLOWING LANTERNS
+                                </h3>
+                            </div>
                         </div>
-                        <div class="glass-card aspect-[4/3] rounded-2xl overflow-hidden group">
+                        <div
+                            class="photo-card-vertical group relative w-full aspect-[4/3] overflow-hidden rounded-sm bg-neutral-900 shadow-2xl">
                             <img src="resources/lion_dance.png"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 alt="Lion">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                                <span class="font-mono text-xs tracking-widest text-festive-gold mb-2">2026</span>
+                                <h3 class="font-bold text-2xl tracking-tight leading-none text-white">LION AWAKES</h3>
+                            </div>
                         </div>
                     </div>
                 </div>
