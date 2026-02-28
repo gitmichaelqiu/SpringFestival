@@ -164,7 +164,8 @@ createApp({
                     y: 100,
                     opacity: 0,
                     duration: 1,
-                    ease: "power3.out"
+                    ease: "power3.out",
+                    clearProps: "all"
                 });
             });
 
@@ -177,7 +178,8 @@ createApp({
                     y: 50,
                     opacity: 0,
                     duration: 1.2,
-                    ease: "power2.out"
+                    ease: "power2.out",
+                    clearProps: "all"
                 });
             });
         };
