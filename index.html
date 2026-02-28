@@ -55,8 +55,8 @@
         <div class="cursor-outline hidden md:block"></div>
 
         <!-- Navigation (from ref) -->
-        <nav
-            class="fixed top-0 left-0 w-full z-[9990] px-6 py-8 flex justify-between items-center mix-blend-difference pointer-events-none">
+        <nav id="main-nav"
+            class="fixed top-0 left-0 w-full z-[9990] px-6 py-8 flex justify-between items-center mix-blend-difference pointer-events-none transition-opacity duration-300">
             <div class="pointer-events-auto">
                 <a href="#home"
                     class="font-display font-bold text-xl tracking-widest text-white hover:text-festive-red transition-colors">SF.</a>
@@ -107,6 +107,38 @@
             </div>
         </div>
 
+        <!-- Interactive Dragon Subpage -->
+        <div id="dragon-subpage"
+            class="fixed inset-0 z-50 pointer-events-none opacity-0 flex flex-col items-center overflow-y-auto w-full h-full bg-festive-gold pb-24">
+            <div id="sparks-container" class="absolute inset-0 pointer-events-none overflow-hidden"></div>
+
+            <button id="close-dragon"
+                class="sticky top-8 right-8 self-end w-12 h-12 bg-black/10 hover:bg-black/20 backdrop-blur-md rounded-full flex items-center justify-center transition-colors mr-8 z-50 mt-8">
+                <i data-lucide="x" class="w-6 h-6 text-black"></i>
+            </button>
+
+            <div class="max-w-4xl w-full px-6 md:px-12 mt-12 relative z-20">
+                <div class="text-center mb-16">
+                    <span class="font-serif text-festive-red text-4xl md:text-6xl font-bold mb-4 block">龍</span>
+                    <h2
+                        class="font-display text-4xl md:text-7xl font-black text-black tracking-tighter mix-blend-overlay">
+                        LONG DANCE</h2>
+                    <p class="font-mono text-festive-red/80 mt-4 tracking-widest text-sm font-bold">THE AWAKENING</p>
+                </div>
+
+                <div class="prose prose-lg max-w-none text-black/80 font-light leading-relaxed space-y-8">
+                    <p class="text-2xl font-serif text-black leading-tight">Believed to control rain, typhoons, and
+                        floods, the mythical dragon is an auspicious symbol deeply admired in Chinese culture.</p>
+                    <p>The Dragon Dance (Wulong) is performed with a long, flexible figure made of wood, bamboo, and
+                        fabric. By mimicking the supposed movements of this river spirit in a sinuous, undulating
+                        manner, dancers invite good harvest and prosperity.</p>
+                    <div class="w-full aspect-video rounded-3xl overflow-hidden my-12 shadow-2xl relative">
+                        <img src="resources/dragon_dance.png" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <main id="main-content">
             <!-- Hero Section -->
             <section id="home" class="relative w-full h-screen flex items-center justify-center overflow-hidden">
@@ -144,8 +176,9 @@
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                        <div class="glass-card p-10 rounded-3xl relative group">
-                            <div class="card-corner-glow bg-festive-red"></div>
+                        <div
+                            class="glass-card p-10 rounded-3xl relative group backdrop-blur-xl border border-white/10 bg-black/40">
+                            <div class="card-corner-glow"></div>
                             <p class="text-xl md:text-2xl font-light leading-relaxed text-gray-300 relative z-10">
                                 The Spring Festival, or <span class="text-festive-red font-bold">Lunar New Year</span>,
                                 marks the end of winter and the beginning of the spring season. It's the most important
@@ -237,25 +270,28 @@
 
                         <!-- Custom 2 -->
                         <div class="custom-item flex flex-col md:flex-row-reverse gap-12 items-center">
-                            <div class="w-full md:w-1/2 flex justify-center">
-                                <div
-                                    class="w-80 h-80 rounded-full border border-white/10 flex items-center justify-center relative spin-slow p-4">
-                                    <svg viewBox="0 0 100 100" class="w-full h-full text-festive-red">
-                                        <!-- Simplified decorative knot vector -->
-                                        <path fill="currentColor"
-                                            d="M50 10 L60 40 L90 50 L60 60 L50 90 L40 60 L10 50 L40 40 Z"
-                                            class="opacity-80" />
-                                        <circle cx="50" cy="50" r="15" fill="none" stroke="currentColor"
-                                            stroke-width="2" />
-                                    </svg>
+                            <div class="w-full md:w-1/2 flex justify-center relative">
+                                <!-- The Trigger Dragon -->
+                                <div id="dragon-trigger"
+                                    class="w-64 h-80 bg-gradient-to-tr from-festive-gold to-yellow-600 rounded-2xl flex flex-col items-center justify-center transform rotate-6 shadow-2xl relative overflow-hidden group cursor-pointer transition-transform hover:-translate-y-4 hover:scale-105 will-change-transform">
+                                    <div class="absolute inset-0 border-2 border-white/30 m-4 rounded-xl"></div>
+                                    <div
+                                        class="absolute bottom-0 right-0 w-48 h-48 bg-festive-red rounded-full filter blur-3xl opacity-20 group-hover:opacity-40 transition-opacity">
+                                    </div>
+                                    <div
+                                        class="text-white text-6xl font-serif font-bold group-hover:scale-110 transition-transform duration-500">
+                                        龍
+                                    </div>
+                                    <div
+                                        class="absolute bottom-6 left-0 w-full text-center text-white/80 font-mono text-xs tracking-widest font-bold">
+                                        AWAKEN</div>
                                 </div>
                             </div>
                             <div class="w-full md:w-1/2">
-                                <h3 class="font-display text-4xl font-bold mb-6 text-white">Lion Dance</h3>
+                                <h3 class="font-display text-4xl font-bold mb-6 text-white">Dragon Dance</h3>
                                 <p class="text-xl text-gray-400 font-light leading-relaxed">
-                                    Accompanied by crashing cymbals and beating drums, the lion dance is performed to
-                                    bring prosperity and good luck. The loud noises are believed to drive away evil
-                                    spirits.
+                                    The dragon embodies power, dignity, and fertility. Its fluid, weaving dance brings
+                                    good luck and drives away sinister spirits.
                                 </p>
                             </div>
                         </div>

@@ -87,7 +87,6 @@ html.lenis {
 
 .glass-card:hover {
     border-color: rgba(200, 16, 46, 0.5);
-    background: rgba(200, 16, 46, 0.05);
     transform: translateY(-8px) scale(1.01);
     box-shadow: 0 30px 60px -15px rgba(200, 16, 46, 0.2);
     z-index: 20;

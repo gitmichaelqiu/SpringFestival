@@ -8,6 +8,7 @@ createApp({
             const closeBtn = document.getElementById('close-envelope');
             const mainContent = document.getElementById('main-content');
             const starsContainer = document.getElementById('stars-container');
+            const mainNav = document.getElementById('main-nav');
 
             if (!trigger || !subpage) return;
 
@@ -27,17 +28,19 @@ createApp({
             }
 
             const stars = starsContainer.children;
-
             const tl = gsap.timeline({ paused: true });
 
             // Ensure subpage is on top and visible during animation
             tl.set(subpage, { pointerEvents: 'auto' })
                 .to(subpage, { opacity: 1, duration: 0.1 })
 
+                // Hide nav
+                .to(mainNav, { opacity: 0, duration: 0.4 }, "<")
+
                 // Scale main content to sink in
                 .to(mainContent, { scale: 0.95, opacity: 0, filter: 'blur(10px)', duration: 0.8, ease: "power3.inOut" }, "<")
 
-                // Stagger stars burst
+                // Stagger stars burst SIMULTANEOUSLY
                 .to(stars, {
                     opacity: 1,
                     scale: () => Math.random() * 1.5 + 0.5,
@@ -47,7 +50,7 @@ createApp({
                     duration: 1.5,
                     stagger: 0.02,
                     ease: "expo.out"
-                }, "<0.2")
+                }, "<")
 
                 // Subpage content rising
                 .from(subpage.querySelector('.max-w-4xl').children, {
@@ -56,10 +59,69 @@ createApp({
                     duration: 0.8,
                     stagger: 0.1,
                     ease: "power3.out"
-                }, "-=1");
+                }, "-=1.2");
 
             trigger.addEventListener('click', () => {
                 lenis.stop(); // Prevent scrolling behind
+                tl.play();
+            });
+
+            closeBtn.addEventListener('click', () => {
+                tl.reverse().then(() => {
+                    lenis.start();
+                });
+            });
+        };
+
+        const initDragonInteraction = () => {
+            const trigger = document.getElementById('dragon-trigger');
+            const subpage = document.getElementById('dragon-subpage');
+            const closeBtn = document.getElementById('close-dragon');
+            const mainContent = document.getElementById('main-content');
+            const sparksContainer = document.getElementById('sparks-container');
+            const mainNav = document.getElementById('main-nav');
+
+            if (!trigger || !subpage) return;
+
+            // Generate SVG sparks
+            for (let i = 0; i < 40; i++) {
+                const spark = document.createElement('div');
+                spark.className = 'absolute w-2 h-2 rounded-full bg-festive-red shadow-[0_0_15px_#C8102E]';
+
+                spark.style.left = `calc(50% + ${(Math.random() - 0.5) * 40}px)`;
+                spark.style.top = `calc(50% + ${(Math.random() - 0.5) * 40}px)`;
+                spark.style.opacity = 0;
+                spark.style.transform = 'scale(0) translate(-50%, -50%)';
+
+                sparksContainer.appendChild(spark);
+            }
+
+            const sparks = sparksContainer.children;
+            const tl = gsap.timeline({ paused: true });
+
+            tl.set(subpage, { pointerEvents: 'auto' })
+                .to(subpage, { opacity: 1, duration: 0.1 })
+                .to(mainNav, { opacity: 0, duration: 0.4 }, "<")
+                .to(mainContent, { scale: 0.95, opacity: 0, filter: 'blur(10px)', duration: 0.8, ease: "power3.inOut" }, "<")
+                .to(sparks, {
+                    opacity: 1,
+                    scale: () => Math.random() * 2 + 0.5,
+                    x: () => (Math.random() - 0.5) * window.innerWidth * 1.5,
+                    y: () => (Math.random() - 0.5) * window.innerHeight * 1.5,
+                    duration: 1.2,
+                    stagger: 0.01,
+                    ease: "power4.out"
+                }, "<")
+                .from(subpage.querySelector('.max-w-4xl').children, {
+                    y: 60,
+                    opacity: 0,
+                    duration: 0.8,
+                    stagger: 0.1,
+                    ease: "power3.out"
+                }, "-=1.0");
+
+            trigger.addEventListener('click', () => {
+                lenis.stop();
                 tl.play();
             });
 
@@ -197,6 +259,7 @@ createApp({
             initCursor();
             initGSAP();
             initEnvelopeInteraction();
+            initDragonInteraction();
         });
 
         return {};
